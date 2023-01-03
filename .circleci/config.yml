@@ -7,7 +7,7 @@ commands:
       steps:
         - slack/notify:
             event: fail
-            channel : circleCi
+            channel : circlecitest
             template : basic_fail_1
 
 # commands:
@@ -132,7 +132,9 @@ jobs:
             cd frontend
             npm install
             npm audit fix --force --audit-level=critical
-            npm audit fix --force
+            npm audit fix --force --audit-level=critical
+            npm audit fix --force --audit-level=critical
+            npm audit fix --force --audit-level=critical
             npm audit --audit-level=critical
       - notify_on_failure
 
@@ -151,6 +153,9 @@ jobs:
             # Your code here
             cd backend
             npm install
+            npm audit fix --force --audit-level=critical
+            npm audit fix --force --audit-level=critical
+            npm audit fix --force --audit-level=critical
             npm audit fix --force --audit-level=critical
             npm audit fix --force
             npm audit --audit-level=critical
@@ -327,7 +332,7 @@ jobs:
     steps:
       - slack/notify:
           event : pass
-          channel : circleCi
+          channel : circlecitest
           template : success_tagged_deployment
 
 workflows:
